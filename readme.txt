@@ -18,7 +18,8 @@ Only use this plugin if you really know that your site's front end doesn't need 
 
 For more info about jQuery Migrate, visit [here](https://github.com/jquery/jquery-migrate#readme).
 
-GitHub: [https://github.com/icaru12/remove-jquery-migrate](https://github.com/icaru12/remove-jquery-migrate)
+GitHub: <https://github.com/icaru12/remove-jquery-migrate>
+
 
 == Installation ==
 
