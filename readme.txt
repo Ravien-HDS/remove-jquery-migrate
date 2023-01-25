@@ -3,7 +3,7 @@ Contributors: frosdqy
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6AD46HAX3URN4
 Tags: remove jquery migrate, disable jquery migrate, remove, jquery migrate, jquery
 Requires at least: 3.6
-Tested up to: 6.0
+Tested up to: 6.1
 Stable tag: trunk
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -12,9 +12,9 @@ A very lightweight plugin that removes jQuery Migrate script from your WordPress
 
 == Description ==
 
-This plugin removes jQuery Migrate script (jquery-migrate.min.js or jquery-migrate.js) from your WordPress site's [front end](https://wordpress.org/support/article/glossary/#front-end) when the plugin is active. To bring back the jQuery Migrate script, simply deactivate this plugin.
+This plugin removes jQuery Migrate script (jquery-migrate.min.js or jquery-migrate.js) from your WordPress site's [front end](https://wordpress.org/documentation/article/wordpress-glossary/#front-end) when the plugin is active. To bring back the removed jQuery Migrate script, simply deactivate this plugin.
 
-Only use this plugin if you really know that your site's front end doesn't need jQuery Migrate. To help in checking whether jQuery Migrate is required in the front end, you can use the development version of jQuery Migrate (unminified version) by temporarily turning on [SCRIPT_DEBUG](https://wordpress.org/support/article/debugging-in-wordpress/#script_debug) mode in wp-config.php file. The development version shows warnings in the browser console when removed and/or deprecated jQuery APIs are used.
+To check whether jQuery Migrate is required in the front end, you could use the development version of jQuery Migrate (unminified version) by temporarily turning on [SCRIPT_DEBUG](https://wordpress.org/documentation/article/debugging-in-wordpress/#script_debug) mode in wp-config.php file. The development version shows warnings in the browser console when removed and/or deprecated jQuery APIs are used.
 
 For more info about jQuery Migrate, visit [here](https://github.com/jquery/jquery-migrate#readme).
 
