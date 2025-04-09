@@ -28,27 +28,31 @@
  */
 
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
-
 if ( ! function_exists( 'twf_remove_jquery_migrate' ) ) {
-	
-	/**
-	 * Remove jQuery Migrate script from the jQuery bundle only in front end.
-	 *
-	 * @since 1.0
-	 *
-	 * @param WP_Scripts $scripts WP_Scripts object.
-	 */
-	function twf_remove_jquery_migrate( $scripts ) {
-		if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
-			$script = $scripts->registered['jquery'];
-			
-			if ( ! empty( $script->deps ) ) { // Check whether the script has any dependencies
-				$script->deps = array_diff( $script->deps, array( 'jquery-migrate' ) );
-			}
-		}
-	}
-	
-	add_action( 'wp_default_scripts', 'twf_remove_jquery_migrate' );
+    /**
+     * Remove jQuery Migrate script from front-end.
+     *
+     * @since 1.0.0
+     *
+     * @param \WP_Scripts $scripts WP_Scripts instance.
+     * @return void
+     */
+    function twf_remove_jquery_migrate( WP_Scripts $scripts ) {
+        // Only proceed if not in admin and jQuery is registered
+        if ( is_admin() || ! isset( $scripts->registered['jquery'] ) ) {
+            return;
+        }
+
+        $script = $scripts->registered['jquery'];
+
+        // Early exit if no dependencies exist
+        if ( empty( $script->deps ) ) {
+            return;
+        }
+
+        // Remove jquery-migrate from dependencies
+        $script->deps = array_diff( $script->deps, array( 'jquery-migrate' ) );
+    }
+
+    add_action( 'wp_default_scripts', 'twf_remove_jquery_migrate' );
 }
