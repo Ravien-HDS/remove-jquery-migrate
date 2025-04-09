@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 if ( ! function_exists( 'twf_remove_jquery_migrate' ) ) {
     /**
-     * Remove jQuery Migrate script from front-end.
+     * Remove jQuery Migrate script from the jQuery bundle only in front end.
      *
      * @since 1.0.0
      *
